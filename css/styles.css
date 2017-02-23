@@ -413,7 +413,7 @@ input::-moz-focus-inner {
   opacity: 1;
 }
 
-.center-block, .calculator .result p {
+.center-block, .calculator .result p, .friends .btn {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -806,7 +806,7 @@ footer .buttons .btn {
 }
 
 .powerfarms .farms_list .item .icon-wind {
-  background: #3ec1f0 url(../images/wind.png) no-repeat center center;
+  background: #999 url(../images/wind.png) no-repeat center center;
 }
 
 .powerfarms .farms_list .item .row {
@@ -834,7 +834,7 @@ footer .buttons .btn {
 /* =calculator
 ---------------------------*/
 .calculator-friends {
-  background: url(../images/bg-1.jpg) no-repeat center top/cover;
+  background: url(../images/bg-1.jpg) no-repeat center bottom/cover;
 }
 
 .calculator {
@@ -904,20 +904,21 @@ footer .buttons .btn {
 }
 
 .calculator .btn {
+  margin-top: 8rem;
   width: 100%;
 }
 
 .calculator .result {
   color: #fff;
-  margin-top: 4rem;
-  margin-bottom: 7rem;
+  margin-top: 4.4rem;
+  margin-bottom: 8rem;
   font-size: 16px;
   font-size: 1.6rem;
 }
 
 .calculator .result p {
   border-bottom: 1px solid #fff;
-  margin-bottom: .5rem;
+  margin-bottom: .8rem;
   padding-bottom: 1rem;
   width: 27rem;
 }
@@ -926,6 +927,61 @@ footer .buttons .btn {
   font-size: 36px;
   font-size: 3.6rem;
   font-weight: bold;
+}
+
+.friends {
+  padding: 9rem 0 12rem;
+}
+
+.friends .title {
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+
+.friends .row {
+  border-bottom: 1px solid #999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 3rem 0;
+}
+
+.friends .row h3 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding-bottom: 2.5rem;
+}
+
+.friends .row .left {
+  width: 385px;
+  margin-right: 40px;
+}
+
+.friends .row .right {
+  flex-grow: 1;
+  padding-top: 1rem;
+}
+
+.friends .row .right p {
+  line-height: 1.5;
+}
+
+.friends .row:last-child {
+  border-bottom: 0;
+}
+
+.friends .btn {
+  max-width: 38rem;
+}
+
+.friends-list {
+  margin-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 /* =/calculator
