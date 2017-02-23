@@ -26,7 +26,7 @@
 }
 
 */
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700|Lato:400,400i,700,700i,900,900i&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif:400,700|Lato:400,400i,700,900&subset=latin-ext");
 .container,
 .outer-container {
   margin-right: auto;
@@ -272,8 +272,14 @@ html, body {
   height: 100%;
 }
 
-.droid, .powerfarms .farms_list .item .name {
+.droidserif, .powerfarms .farms_list .item .name {
   font-family: 'Droid Serif', serif;
+}
+
+.droidsans, .powerfarms .owl-nav,
+.friends .owl-nav, .powerfarms .owl-dots,
+.friends .owl-dots {
+  font-family: 'Droid Sans', sans-serif;
 }
 
 input,
@@ -345,7 +351,8 @@ input::-moz-focus-inner {
   text-align: center;
 }
 
-.before, .btn:before, .title:after, .header nav ul li a:after, .header .link .link-btn:after, .header .link .link-btn:before, .header .switch a:after, .powerfarms .farms_list .item .name:before {
+.before, .btn:before, .title:after, .header nav ul li a:after, .header .link .link-btn:after, .header .link .link-btn:before, .header .switch a:after, .powerfarms .farms_list .item .name:before, .powerfarms .owl-nav [class*='owl-']:before,
+.friends .owl-nav [class*='owl-']:before {
   content: "";
   display: block;
   position: absolute;
@@ -829,6 +836,157 @@ footer .buttons .btn {
   padding-bottom: .2rem;
 }
 
+.powerfarms .owl_pagination,
+.friends .owl_pagination {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.powerfarms .owl_pagination_container,
+.friends .owl_pagination_container {
+  display: inline-block;
+  position: relative;
+  padding: 0 69px;
+}
+
+.powerfarms .owl-nav,
+.friends .owl-nav {
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.powerfarms .owl-nav [class*='owl-'],
+.friends .owl-nav [class*='owl-'] {
+  font-size: 16px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 7px;
+  padding: 4px 7px;
+  position: absolute;
+}
+
+.powerfarms .owl-nav [class*='owl-']:before,
+.friends .owl-nav [class*='owl-']:before {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 -25px;
+  height: 15px;
+  top: 5px;
+  width: 20px;
+}
+
+.powerfarms .owl-nav [class*='owl-']:hover,
+.friends .owl-nav [class*='owl-']:hover {
+  text-decoration: none;
+}
+
+.powerfarms .owl-nav .owl-prev,
+.friends .owl-nav .owl-prev {
+  left: 0;
+}
+
+.powerfarms .owl-nav .owl-prev:before,
+.friends .owl-nav .owl-prev:before {
+  left: -22px;
+}
+
+.powerfarms .owl-nav .owl-next,
+.friends .owl-nav .owl-next {
+  right: 0;
+}
+
+.powerfarms .owl-nav .owl-next:before,
+.friends .owl-nav .owl-next:before {
+  right: -24px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.powerfarms .owl-nav .disabled,
+.friends .owl-nav .disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.powerfarms .owl-nav.disabled + .owl-dots,
+.friends .owl-nav.disabled + .owl-dots {
+  margin-top: 10px;
+}
+
+.powerfarms .owl-dots,
+.friends .owl-dots {
+  font-weight: bold;
+  text-align: center;
+}
+
+.powerfarms .owl-dots .owl-dot,
+.friends .owl-dots .owl-dot {
+  font-size: 16px;
+  font-size: 1.6rem;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: border-color 0.2s ease-out;
+  transition: border-color 0.2s ease-out;
+  border: 2px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  height: 59px;
+  margin-left: 6px;
+  margin-right: 6px;
+  width: 59px;
+  zoom: 1;
+}
+
+.powerfarms .owl-dots .owl-dot:hover, .powerfarms .owl-dots .owl-dot.active,
+.friends .owl-dots .owl-dot:hover,
+.friends .owl-dots .owl-dot.active {
+  border-color: #fd5832;
+}
+
+.powerfarms .owl-dots .owl-dot span,
+.friends .owl-dots .owl-dot span {
+  text-indent: -9999em;
+}
+
+.powerfarms .owl-dots .owl-dot.active,
+.friends .owl-dots .owl-dot.active {
+  cursor: default;
+}
+
+.powerfarms .owl-dots .owl-dot.active span,
+.powerfarms .owl-theme .owl-dots .owl-dot:hover span,
+.friends .owl-dots .owl-dot.active span,
+.friends .owl-theme .owl-dots .owl-dot:hover span {
+  background: #869791;
+}
+
+.powerfarms .owl-dots,
+.friends .owl-dots {
+  counter-reset: dots;
+}
+
+.powerfarms .owl-dot,
+.friends .owl-dot {
+  position: relative;
+}
+
+.powerfarms .owl-dot:before,
+.friends .owl-dot:before {
+  content: counter(dots);
+  counter-increment: dots;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 18px;
+  width: 100%;
+}
+
 /* =/farms_list
 ---------------------------*/
 /* =calculator
@@ -904,7 +1062,6 @@ footer .buttons .btn {
 }
 
 .calculator .btn {
-  margin-top: 8rem;
   width: 100%;
 }
 
@@ -958,6 +1115,7 @@ footer .buttons .btn {
 }
 
 .friends .row .left {
+  min-width: 385px;
   width: 385px;
   margin-right: 40px;
 }
@@ -981,6 +1139,10 @@ footer .buttons .btn {
 
 .friends-list {
   margin-top: 8rem;
+}
+
+.friends .owl_pagination {
+  margin-top: 3rem;
   padding-bottom: 8rem;
 }
 

@@ -1,4 +1,27 @@
 $(document).ready(function(){
+	// carousel
+	$('#foo1').owlCarousel({
+		loop:false,
+		nav:true,
+		dots: true,
+		items:4,
+		navText: ["PREV", "NEXT"],
+		navContainer : '.powerfarms .owl-nav',
+		dotsContainer : '.powerfarms .owl-dots'
+	});
+
+	$('#foo2').owlCarousel({
+		loop:false,
+		nav:true,
+		dots: true,
+		items:1,
+		navText: ["PREV", "NEXT"],
+		navContainer : '.friends .owl-nav',
+		dotsContainer : '.friends .owl-dots'
+	});
+
+
+})
 
 
 // =заглушка для IE
