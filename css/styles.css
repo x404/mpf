@@ -26,7 +26,7 @@
 }
 
 */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700|Lato:400,400i,700,700i,900,900i&subset=latin-ext");
 .container,
 .outer-container {
   margin-right: auto;
@@ -272,6 +272,10 @@ html, body {
   height: 100%;
 }
 
+.droid, .powerfarms .farms_list .item .name {
+  font-family: 'Droid Serif', serif;
+}
+
 input,
 textarea {
   font-family: 'Lato', sans-serif;
@@ -341,7 +345,7 @@ input::-moz-focus-inner {
   text-align: center;
 }
 
-.before, .btn:before, .title:before, .header nav ul li a:after, .header .link .link-btn:after, .header .link .link-btn:before, .header .switch a:after {
+.before, .btn:before, .title:after, .header nav ul li a:after, .header .link .link-btn:after, .header .link .link-btn:before, .header .switch a:after, .powerfarms .farms_list .item .name:before {
   content: "";
   display: block;
   position: absolute;
@@ -420,12 +424,12 @@ input::-moz-focus-inner {
   text-align: center;
 }
 
-.title:before {
+.title:after {
   border-bottom: 4px solid #fb9430;
   width: 18rem;
   left: 50%;
   margin-left: -9rem;
-  bottom: -2rem;
+  bottom: -3.1rem;
 }
 
 /* =header
@@ -706,11 +710,123 @@ footer .buttons .btn {
 /* =farms_list
 ---------------------------*/
 .powerfarms {
-  padding: 10rem 0;
+  padding: 8.7rem 0;
 }
 
 .powerfarms .farms_list {
-  padding-top: 8rem;
+  margin-left: -5px;
+  margin-right: -5px;
+  overflow: hidden;
+  padding-top: 11rem;
+}
+
+.powerfarms .farms_list .item {
+  float: left;
+  color: #fff;
+  width: 305px;
+  margin: 0 5px;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.powerfarms .farms_list .item .top {
+  position: relative;
+}
+
+.powerfarms .farms_list .item img {
+  vertical-align: top;
+}
+
+.powerfarms .farms_list .item .name {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  font-weight: bold;
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  padding-left: 40px;
+  width: 100%;
+}
+
+.powerfarms .farms_list .item .name:before {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: -35px 0;
+  left: 15px;
+  height: 20px;
+  top: 20px;
+  width: 14px;
+}
+
+.powerfarms .farms_list .item .name p {
+  max-width: 6rem;
+}
+
+.powerfarms .farms_list .item .details {
+  background-color: #008d80;
+  padding: 4.7rem 2rem 1.7rem;
+  position: relative;
+  z-index: 10;
+}
+
+.powerfarms .farms_list .item .details .btn {
+  margin-top: .4rem;
+  width: calc(100% - .6rem);
+}
+
+.powerfarms .farms_list .item .details .investor {
+  line-height: 1.5;
+  padding-top: 1.5rem;
+}
+
+.powerfarms .farms_list .item .icon {
+  display: block;
+  height: 60px;
+  left: 50%;
+  margin-left: -30px;
+  position: absolute;
+  top: -30px;
+  width: 60px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.powerfarms .farms_list .item .icon-sun {
+  background: #fd6744 url(../images/sun.png) no-repeat center center;
+}
+
+.powerfarms .farms_list .item .icon-wind {
+  background: #3ec1f0 url(../images/wind.png) no-repeat center center;
+}
+
+.powerfarms .farms_list .item .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2.2rem 0;
+}
+
+.powerfarms .farms_list .item .row .cell {
+  flex-basis: 50%;
+}
+
+.powerfarms .farms_list .item .row .cell .num {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding-bottom: .2rem;
 }
 
 /* =/farms_list
