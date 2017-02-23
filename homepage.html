@@ -54,7 +54,7 @@
 			</div>
 
 			<div class="link">
-				<a href="#" title="" class="link-btn"><span></span><i>Contact Us</i></a>
+				<a href="#" title="" class="link-btn"  data-toggle="modal" data-target="#contactus"><span></span><i>Contact Us</i></a>
 			</div>
 
 			<div class="switch">
@@ -729,6 +729,52 @@
 <!-- =/footer -->
 
 
+<!-- =contact us -->
+<div class="modal fade" id="contactus" tabindex="-1" role="dialog" aria-labelledby="contactUsLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px">
+					<path fill-rule="evenodd"  fill="rgb(152, 152, 152)"
+					 d="M18.003,17.047 L17.051,18.000 L9.000,9.949 L0.949,18.000 L-0.004,17.047 L8.047,8.997 L-0.004,0.946 L0.949,-0.007 L9.000,8.044 L17.051,-0.007 L18.003,0.946 L9.952,8.997 L18.003,17.047 Z"/></svg>
+						</button>
+				<h4 class="modal-title" id="contactUsLabel">Contast Us</h4>
+			</div>
+			<div class="modal-body">
+				<form action="#" method="post" id="contactus-form">
+					<fieldset>
+						<div>
+							<input name="name" id="name" type="text" class="form-control required1" value="" aria-required="true" />
+							<label for="name">First and Last name*</label>
+						</div>
+						<div>
+							<input name="email" id="email" type="text" class="form-control email required1" value="" aria-required="true" />
+							<label for="email">E-mail*</label>
+						</div>
+						<div>
+							<input name="tel" id="tel" type="tel" class="form-control" value="" />
+							<label for="tel">Phone number</label>
+						</div>
+						<div>
+							<textarea name="msg" id="msg" class="form-control required1" cols="30" rows="10" aria-required="true"></textarea>
+							<label for="tel">Message*</label>
+						</div>
+						<div class="captcha">
+							<img src="tmp/captcha.jpg" alt="" />
+						</div>
+						<a href="#" class="btn btn-submit" role="button"><span>SEND</span></a>
+					</fieldset>
+				</form>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- =/contact us -->
+
+
+
+
 <div id="outdated"></div>
 <link rel="stylesheet" property="stylesheet" href="outdatedbrowser/outdatedbrowser.min.css" />
 <script src="outdatedbrowser/outdatedbrowser.min.js"></script>
@@ -737,6 +783,7 @@
 <script>window.jQuery || document.write('<script src="js/jquery.validate.min.js"><\/script>')</script>
 
 <script src="js/owl.carousel.min.js"></script>
+<script src="js/modal.min.js"></script>
 
 <script src="js/engine.js"></script>
 </body>
