@@ -21,6 +21,40 @@ $(document).ready(function(){
 	});
 
 
+	// style select
+	$('#farm').styler();
+	$('#period').styler();
+
+
+	// calculator
+	$('.calc-btn').click(function(e){
+		e.preventDefault();
+		$('.calculator .sum').text('20 000 $');
+	})
+
+	var $output = '',
+		$sumtext = '';
+
+	$('#period').change(function() {
+		var value = $(this).val();
+		switch (value){
+			case '1' :
+				$money = 'Please enter desired monthly income';
+				$output = 'You need to invest in order to get desired monthly income';
+				break;
+			case '2' :
+				$money = 'Please enter the sum of available investment';
+				$output = 'Will be your approximate monthly income';
+				break;
+			default :
+				$money = '';
+				$output = '';
+			 	break;
+		};
+
+		$('.calculator .result-text').text($output);
+		$('.calculator #money').val('').removeAttr('disabled').attr('placeholder', $money);
+	})
 
 
 	// validation
