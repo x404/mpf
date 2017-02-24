@@ -29,12 +29,50 @@ $(document).ready(function(){
 	// }, false);	
 
 
+	// $('#money').keyup(function(e){
+	// 	var value = $(this).val();
+	// 	value = value.replace(' $', '');
+	// 	$('#money').val(value + ' $')
+	// })
+
+	$('#money').inputmask(
+		"decimal", {
+			digits: 2,
+			autoGroup: true,
+			groupSeparator: " ",
+			allowPlus: false,
+			allowMinus: false,
+			placeholder: ' ',
+			suffix: " $",
+			rightAlign : false,
+			showMaskOnFocus : true
+		});
+
 	// style select
 	$('#farm').styler();
 	$('#period').styler();
 
 
 	// calculator
+	$.fn.setCursorPosition = function(pos) {
+		this.each(function(index, elem) {
+		if (elem.setSelectionRange) {
+			elem.setSelectionRange(pos, pos);
+		} else if (elem.createTextRange) {
+			var range = elem.createTextRange();
+			range.collapse(true);
+			range.moveEnd('character', pos);
+			range.moveStart('character', pos);
+			range.select();
+		}
+		});
+		return this;
+	};
+
+
+
+
+
 	var $output = '',
 		$sumtext = '';
 
@@ -43,11 +81,11 @@ $(document).ready(function(){
 		switch (value){
 			case '1' :
 				$money = 'Please enter desired monthly income';
-				$output = 'You need to invest in order to get desired monthly income';
+				$output = 'You need to invest in order <br/> to get desired monthly income';
 				break;
 			case '2' :
 				$money = 'Please enter the sum of available investment';
-				$output = 'Will be your approximate monthly income';
+				$output = 'Will be your approximate <br/> monthly income';
 				break;
 			default :
 				$money = '';
@@ -55,8 +93,11 @@ $(document).ready(function(){
 			 	break;
 		};
 
-		$('.calculator .result-text').text($output);
+		$('.money-box').addClass('enabled').find('.placeholder').show();
+		$('.calculator .result-text').html($output);
 		$('.calculator #money').val('').removeAttr('disabled').attr('placeholder', $money);
+		$('.calculator .money-box .placeholder').text($money);
+
 	});
 
 
@@ -115,12 +156,18 @@ $(document).ready(function(){
 	});	
 })
 
-$(document).on('click','.thank .close', function(e){    
-    e.preventDefault();
-    var $this = $(this);
-    $('.thank').fadeOut();
-    $('#contactus').modal('hide');
-})
+$(document).on('click','.thank .close', function(e){	
+	e.preventDefault();
+	var $this = $(this);
+	$('.thank').fadeOut();
+	$('#contactus').modal('hide');
+});
+
+
+$(document).on('click','.money-box.enabled .placeholder', function(e){	
+	$(this).hide();
+	$('#money').focus().setCursorPosition(0);
+});
 
 
 // =заглушка для IE
