@@ -20,13 +20,13 @@ $(document).ready(function(){
 		dotsContainer : '.friends .owl-dots'
 	});
 
-	var vid = document.getElementById("bgvideo");
-	var vid2 = document.getElementById("bgvideo2");
-	vid.addEventListener('ended', function () {
-		// vid.currentTime = 12.0;
-		vid2.play();
-		$('.bgvideo').hide();
-	}, false);	
+	// var vid = document.getElementById("bgvideo");
+	// var vid2 = document.getElementById("bgvideo2");
+	// vid.addEventListener('ended', function () {
+	// 	// vid.currentTime = 12.0;
+	// 	vid2.play();
+	// 	$('.bgvideo').hide();
+	// }, false);	
 
 
 	// style select
@@ -73,7 +73,6 @@ $(document).ready(function(){
 	});
 
 	errorTxt = 'Ошибка отправки';
-	thankTxt = '<div class="thank"> <div class="inner"> <button class="close" type="button"></button> <p class="name">Dear Antotn Gorodetskiy</p> <p>Thank you for submitting your question to the My Power Farm. <br> Your satisfaction is our goal!</p> <p>Our manager will contact you regarding<br>your request as soon as possible!</p> <p><strong>Sincerely, <br>My Power Farm</strong></p> </div> </div>';
 	$('#contactus-form').validate({
 		submitHandler: function(form){
 			strSubmit=$(form).serialize();
@@ -81,6 +80,8 @@ $(document).ready(function(){
 				success: function(){
 				}
 			}).fail(function(error){
+					name = $('#name').val();
+					thankTxt = '<div class="thank"> <div class="inner"> <button class="close" type="button"></button> <p class="name">Dear ' + name +'</p> <p>Thank you for submitting your question to the My Power Farm. <br> Your satisfaction is our goal!</p> <p>Our manager will contact you regarding<br>your request as soon as possible!</p> <p><strong>Sincerely, <br>My Power Farm</strong></p> </div> </div>';
 					$('#contactus').fadeOut();
 					$('body').append(thankTxt);
 					startClock('contactus-form');
@@ -88,6 +89,30 @@ $(document).ready(function(){
 			});
 		}
 	});
+
+	// validation mpf agent
+	$('#mpfagent-form .btn-submit').click(function(){
+		$('#mpfagent-form').submit();
+		return false;
+	});
+
+	errorTxt = 'Ошибка отправки';
+	$('#mpfagent-form').validate({
+		submitHandler: function(form){
+			strSubmit=$(form).serialize();
+			$.ajax({type: 'POST',url: '/ajax/callback.ajax.php',data: strSubmit,
+				success: function(){
+				}
+			}).fail(function(error){
+					name = $('#nameagent').val();
+					thankTxt = '<div class="thank fixed"> <div class="inner"> <button class="close" type="button"></button> <p class="name">Dear ' + name +'</p> <p>Thank you for choosing up MyPowerFarm. <br/> Our manager will contact you as soon as possible!</p> <p><strong>Sincerely, <br>My Power Farm</strong></p> </div> </div>';
+					$('body').append(thankTxt);
+					$('body').addClass('blur').append('<div class="modal-backdrop in"></div>');
+					startClock('mpfagent-form');
+				// alert(errorTxt)
+			});
+		}
+	});	
 })
 
 $(document).on('click','.thank .close', function(e){    
@@ -141,6 +166,17 @@ function showTime(form){
 				$('#contactus').modal('hide');
 			})
 		}
+
+		if (form == 'mpfagent-form'){ 
+			$('.thank').fadeOut('normal', function(){
+				$('#mpfagent-form .form-control').val('');
+				$('.thank').remove();
+				$('body').removeClass('blur');
+				$('.modal-backdrop').remove()
+			})
+		}
+
+
 	}
 }
 

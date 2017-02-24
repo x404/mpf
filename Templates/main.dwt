@@ -113,7 +113,7 @@
 				<h4 class="modal-title" id="contactUsLabel">Contast Us</h4>
 			</div>
 			<div class="modal-body">
-				<form action="#" method="post" id="contactus-form">
+				<form action="#" method="post" id="contactus-form" class="form">
 					<fieldset>
 						<div>
 							<input name="name" id="name" type="text" class="form-control required1" value="" aria-required="true" />
