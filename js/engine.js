@@ -20,6 +20,14 @@ $(document).ready(function(){
 		dotsContainer : '.friends .owl-dots'
 	});
 
+	var vid = document.getElementById("bgvideo");
+	var vid2 = document.getElementById("bgvideo2");
+	vid.addEventListener('ended', function () {
+		// vid.currentTime = 12.0;
+		vid2.play();
+		$('.bgvideo').hide();
+	}, false);	
+
 
 	// style select
 	$('#farm').styler();
@@ -27,11 +35,6 @@ $(document).ready(function(){
 
 
 	// calculator
-	$('.calc-btn').click(function(e){
-		e.preventDefault();
-		$('.calculator .sum').text('20 000 $');
-	})
-
 	var $output = '',
 		$sumtext = '';
 
@@ -54,7 +57,13 @@ $(document).ready(function(){
 
 		$('.calculator .result-text').text($output);
 		$('.calculator #money').val('').removeAttr('disabled').attr('placeholder', $money);
-	})
+	});
+
+
+	$('.calc-btn').click(function(e){
+		e.preventDefault();
+		$('.calculator .sum').text('20 000 $');
+	});
 
 
 	// validation
@@ -84,6 +93,8 @@ $(document).ready(function(){
 $(document).on('click','.thank .close', function(e){    
     e.preventDefault();
     var $this = $(this);
+    $('.thank').fadeOut();
+    $('#contactus').modal('hide');
 })
 
 
@@ -125,8 +136,8 @@ function showTime(form){
 		stopClock();
 		if (form == 'contactus-form'){ 
 			$('.thank').fadeOut('normal', function(){
-				$('.thank').remove();
 				$('#contactus-form .form-control').val('');
+				$('.thank').remove();
 				$('#contactus').modal('hide');
 			})
 		}
