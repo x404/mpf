@@ -35,9 +35,9 @@ $(document).ready(function(){
 	// 	$('#money').val(value + ' $')
 	// })
 
-	$('#money').inputmask(
+	$('#money, #amount').inputmask(
 		"decimal", {
-			digits: 2,
+			digits: 3,
 			autoGroup: true,
 			groupSeparator: " ",
 			allowPlus: false,
