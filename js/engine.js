@@ -164,6 +164,8 @@ $(document).on('click','.thank .close', function(e){
 	var $this = $(this);
 	$('.thank').fadeOut();
 	$('#contactus').modal('hide');
+	$('.modal-backdrop').remove();
+	$('body').removeClass('blur');
 });
 
 
