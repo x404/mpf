@@ -99,14 +99,14 @@
 			</div>
 
 			<div class="box">
-				<p class="box_head">My Power Farm can be used to buy-out completed Projects at the operational stage.</p>
+				<p class="box_head">Following the offered models of cooperation please fill out the required data:</p>
 				<div class="box_body">
 					<form action="#" method="post" id="mpfagent-form" class="form">
 						<fieldset>
 							<div class="row">
 								<div class="cell">
 									<input name="nameagent" class="form-control required1" id="nameagent" type="text" value="" />
-									<label for="nameagent">First and Last name*</label>
+									<label for="nameagent">First and Last name</label>
 								</div>
 								<div class="cell">
 									<input name="country" class="form-control required1" id="country" type="text" value="" />
@@ -116,21 +116,62 @@
 							<div class="row">
 								<div class="cell">
 									<input name="emailagent" class="form-control email required1" id="emailagent" type="email" value="" />
-									<label for="emailagent">E-mail*</label>
+									<label for="emailagent">E-mail</label>
 								</div>
 								<div class="cell">
 									<input name="telageng" class="form-control required1" id="telageng" type="tel" value="" />
-									<label for="telageng">Phone number*</label>
+									<label for="telageng">Phone number</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="cell">
-									<div class="captcha">
-										<img src="tmp/captcha.jpg" alt="" />
-									</div>
+									<label for="energy">Energy type</label>
+									<select name="energy" id="energy">
+										<option value="Biomass">Biomass</option>
+										<option value="Biomass2">Biomass2</option>
+									</select>
 								</div>
 								<div class="cell">
-									<a href="#" class="btn btn-submit" role="button"><span>Become MPF Agent!</span></a>
+									<label for="capacity">Project capacity</label>
+									<select name="capacity" id="capacity">
+										<option value="1">50 - 100 MW’s</option>
+										<option value="2">100 - 150 MW’s</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell">
+									<input name="location" class="form-control required1" id="location" type="email" value="" />
+									<label for="location">Project location</label>
+								</div>
+								<div class="cell">
+									<input name="amount" class="form-control required1" id="amount" type="tel" value="" />
+									<label for="amount">Needed investment amount</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="cell cell-2">
+									<label for="model">Desired model of cooperation</label>
+									<select name="model" id="model">
+										<option value="To get the share for the legal rights and investments">To get the share for the legal rights and investments</option>
+										<option value="To get the share for the legal rights and investments">To get the share for the legal rights and investments</option>
+										<option value="To get the share for the legal rights and investments">To get the share for the legal rights and investments</option>
+									</select>
+								</div>
+							</div>
+
+
+							<div class="row">
+								<div class="cell cell-2">
+									<textarea name="details" id="details" class="form-control" cols="30" rows="10"></textarea>
+									<label for="details">Project Details</label>
+								</div>
+							</div>
+
+							<div class="row flex-right">
+								<div class="cell ">
+									<a href="#" class="btn btn-submit" role="button"><span>Start Cooperation</span></a>
 								</div>
 							</div>
 						</fieldset>

@@ -51,6 +51,9 @@ $(document).ready(function(){
 	// style select
 	$('#farm').styler();
 	$('#period').styler();
+	$('#model').styler();
+	$('#energy').styler();
+	$('#capacity').styler();
 
 
 	// calculator
@@ -119,14 +122,14 @@ $(document).ready(function(){
 			strSubmit=$(form).serialize();
 			$.ajax({type: 'POST',url: '/ajax/callback.ajax.php',data: strSubmit,
 				success: function(){
-				}
-			}).fail(function(error){
 					name = $('#name').val();
 					thankTxt = '<div class="thank"> <div class="inner"> <button class="close" type="button"></button> <p class="name">Dear ' + name +'</p> <p>Thank you for submitting your question to the My Power Farm. <br> Your satisfaction is our goal!</p> <p>Our manager will contact you regarding<br>your request as soon as possible!</p> <p><strong>Sincerely, <br>My Power Farm</strong></p> </div> </div>';
 					$('#contactus').fadeOut();
 					$('body').append(thankTxt);
 					startClock('contactus-form');
-				// alert(errorTxt)
+				}
+			}).fail(function(error){
+				alert(errorTxt)
 			});
 		}
 	});
@@ -143,14 +146,14 @@ $(document).ready(function(){
 			strSubmit=$(form).serialize();
 			$.ajax({type: 'POST',url: '/ajax/callback.ajax.php',data: strSubmit,
 				success: function(){
-				}
-			}).fail(function(error){
 					name = $('#nameagent').val();
 					thankTxt = '<div class="thank fixed"> <div class="inner"> <button class="close" type="button"></button> <p class="name">Dear ' + name +'</p> <p>Thank you for choosing up MyPowerFarm. <br/> Our manager will contact you as soon as possible!</p> <p><strong>Sincerely, <br>My Power Farm</strong></p> </div> </div>';
 					$('body').append(thankTxt);
 					$('body').addClass('blur').append('<div class="modal-backdrop in"></div>');
 					startClock('mpfagent-form');
-				// alert(errorTxt)
+				}
+			}).fail(function(error){
+				alert(errorTxt)
 			});
 		}
 	});	
