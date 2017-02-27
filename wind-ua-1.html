@@ -212,6 +212,44 @@
 				<!-- =progress -->
 				<div class="progress">
 					<h3>Project Development Progress:</h3>
+					<div class="progress_line flexbox text-center">
+						<div class="cell">
+							<div class="icon">
+								<div class="status status-ok"><img src="images/ok.png" alt="ok" /></div>
+							</div>
+							Wind <br /> measurements
+						</div>
+						<div class="cell">
+							<div class="icon">
+								<div class="status status-ok"><img src="images/ok.png" alt="ok" /></div>
+							</div>
+							Land Lease
+						</div>
+						<div class="cell">
+							<div class="icon">
+								<div class="status status-ok"><img src="images/ok.png" alt="ok" /></div>
+							</div>
+							Environmental <br /> assessment
+						</div>
+						<div class="cell">
+							<div class="icon">
+								<div class="status status-ok"><img src="images/ok.png" alt="ok" /></div>
+							</div>
+							Grid connection							
+						</div>
+						<div class="cell">
+							<div class="icon">
+								<div class="status status-ok"><img src="images/ok.png" alt="ok" /></div>
+							</div>
+							Building permit
+						</div>
+						<div class="cell cell-proccess">
+							<div class="icon">
+								<div class="status status-process"><img src="images/proccess.png" alt="proccess" /></div>
+							</div>
+							Construction <br /> scheduled for Q3 2017
+						</div>
+					</div>
 				</div>
 				<!-- =/progress -->
 
@@ -221,7 +259,7 @@
 					<!-- =content -->
 					<div class="content">
 						<main>
-							<p>Project description: MPF Wind UA 1 project is a Ukrainian project, with site on coast of the lake Sivash. The site is flat and grass covered, which facilitates construction works, and the surface roughness is accordingly low, reducing turbulence and wind fluctuations resulting in low stress on the wind turbines. </p>
+							<p><i>Project description:</i> MPF Wind UA 1 project is a Ukrainian project, with site on coast of the lake Sivash. The site is flat and grass covered, which facilitates construction works, and the surface roughness is accordingly low, reducing turbulence and wind fluctuations resulting in low stress on the wind turbines. </p>
 							<p>MPF Wind UA 1 is the second stage of an existing wind farm, consisting of two 600kW and sixteen 110kW turbines. GeoNet, has been performing a wind measurement campaign during 2 years using 100m met mast with wind measurement equipment provided by ENRGY. The wind report showed the result of mean wind speed 7,4m/s.</p>
 							<p>The substation is located in less than 1km distance and allows to connect 12M’s. For this porpoise there has been done wind measurements, environmental assessment, obtained land lease, grid connection rights and building permit. </p>
 							<p>Wind studies has been performed by Danish company “KenTec”, and showed that by using  six 2MW Vestas V80 with 78m HH the capacity factor reaches 34,1%. It is going to be used refurbished wind turbines, completed by a well known wind turbine service provider.</p>
@@ -230,19 +268,50 @@
 							<p>Project now is in final development stage, precisely, on the stage of obtaining building permission.</p>
 							<p>The construction is scheduled for Q3 2017.</p>							
 						</main>
+
+		<div id="map"></div>
+		<script>
+		var map;
+		function initMap() {
+		var myLatlng = new google.maps.LatLng(46.653208, 32.560162);
+		var mapOptions = {
+			zoom: 13,
+			center: myLatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			scrollwheel : false
+		};
+		var styles = [{
+			stylers: [
+				{saturation: 0}
+				]
+			}];
+			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+			map.setOptions({styles: styles});
+
+			var image = '/images/balloon.png';
+			var mpf = new google.maps.Marker({
+				position: {lat: 46.652751, lng: 32.558284},
+				map: map,
+				icon: image
+			});				
+		}
+		</script>
+
 					</div>
 					<!-- =/content -->
 					<!-- =aside -->
 					<aside>
 						<div class="calculator text-center">
-							<p>Investment Calculator</p>
-							<form action="#" method="post" id="calc-form">
+							<p class="title">Investment Calculator</p>
+							<form action="#" method="post" id="calc-form" class="form">
 								<fieldset>
 									<select name="period" id="period" data-placeholder="Profit per month">
 										<option value=""></option>
 										<option value="1">Desired monthly income</option>
 										<option value="2">Sum available for investment</option>
 									</select>
+
+									<input type="text" name="amount" class="form-control" id="amount" value="" />
 
 									<div class="money-box">
 										<label class="placeholder"></label>
@@ -258,7 +327,7 @@
 								</fieldset>
 							</form>
 						</div>
-						<a href="#" class="btn btn-blue btn-share"><span>SHARE WITH FRIENDS</span></a>
+						<a href="http://www.facebook.com/sharer.php?u=http://ya.ru" target="_blank" class="btn btn-blue btn-share"><span>SHARE WITH FRIENDS</span></a>
 						<a href="#" class="btn btn-blue btn-download"><span>DOWNLOAD BROCHURE</span></a>
 					</aside>
 					<!-- =/aside -->
@@ -361,5 +430,6 @@
 
 <script src="js/modal.min.js"></script>
 <script src="js/engine.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJon0oRy7AYzbHfD1DO2oSOEDaVRDxzHU&callback=initMap"></script>
 </body>
 <!-- InstanceEnd --></html>
