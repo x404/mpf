@@ -30,13 +30,7 @@ $(document).ready(function(){
 		dotsContainer : '.other_projects .owl-dots'
 	});	
 
-	// var vid = document.getElementById("bgvideo");
-	// var vid2 = document.getElementById("bgvideo2");
-	// vid.addEventListener('ended', function () {
-	// 	// vid.currentTime = 12.0;
-	// 	vid2.play();
-	// 	$('.bgvideo').hide();
-	// }, false);	
+
 
 
 	// $('#money').keyup(function(e){

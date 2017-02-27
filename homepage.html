@@ -69,15 +69,25 @@
 	<!-- =video -->
 	<div class="video text-center">
 		<video autoplay preload="auto" class="bgvideo" id="bgvideo">
-			<source src="video/MPF_Rus-21.mp4" type="video/mp4"></source>
-			<source src="/videos/MPF_Rus-21.webm" type="video/webm"></source>
+			<source src="/video/mp4/MPF_Eng_x264.mp4" type="video/mp4">
+			<source src="/video/webm/MPF_Eng_VP8.webm" type="video/webm">
 		</video>
 
 		<video preload="auto" class="bgvideo2" id="bgvideo2">
-			<source src="video/MPF_Rus-21.mp4" type="video/mp4"></source>
-			<source src="/videos/MPF_Rus-21.webm" type="video/webm"></source>
+			<source src="/video/mp4/MPF_Eng_Cicl_x264.mp4" type="video/mp4">
+			<source src="/video/MPF_Eng_Cicl_VP8.webm" type="video/webm">
 		</video>
 
+		<script>
+			var vid = document.getElementById("bgvideo");
+			var vid2 = document.getElementById("bgvideo2");
+			vid.addEventListener('ended', function () {
+				vid.currentTime = 18.0;
+				vid2.setAttribute('loop', true);
+				$('.bgvideo').hide();
+				vid2.play();
+			}, false);
+		</script>
 		<p>Get your Power Farm now!</p>
 		<!-- <a href="#" class="btn"><span>GET YOUR POWER FARM NOW</span></a> -->
 	</div>
