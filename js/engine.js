@@ -20,6 +20,16 @@ $(document).ready(function(){
 		dotsContainer : '.friends .owl-dots'
 	});
 
+	$('#foo3').owlCarousel({
+		loop:false,
+		nav:true,
+		dots: true,
+		items:4,
+		navText: ["PREV", "NEXT"],
+		navContainer : '.other_projects .owl-nav',
+		dotsContainer : '.other_projects .owl-dots'
+	});	
+
 	// var vid = document.getElementById("bgvideo");
 	// var vid2 = document.getElementById("bgvideo2");
 	// vid.addEventListener('ended', function () {

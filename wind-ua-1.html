@@ -235,7 +235,7 @@
 							<div class="icon">
 								<div class="status status-ok"><img src="images/ok.png" alt="ok" /></div>
 							</div>
-							Grid connection							
+							Grid connection
 						</div>
 						<div class="cell">
 							<div class="icon">
@@ -253,8 +253,8 @@
 				</div>
 				<!-- =/progress -->
 
-
-			
+				
+				<!-- =content-aside -->
 				<div class="content-aside">
 					<!-- =content -->
 					<div class="content">
@@ -269,33 +269,36 @@
 							<p>The construction is scheduled for Q3 2017.</p>							
 						</main>
 
-		<div id="map"></div>
-		<script>
-		var map;
-		function initMap() {
-		var myLatlng = new google.maps.LatLng(46.653208, 32.560162);
-		var mapOptions = {
-			zoom: 13,
-			center: myLatlng,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			scrollwheel : false
-		};
-		var styles = [{
-			stylers: [
-				{saturation: 0}
-				]
-			}];
-			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-			map.setOptions({styles: styles});
 
-			var image = '/images/balloon.png';
-			var mpf = new google.maps.Marker({
-				position: {lat: 46.652751, lng: 32.558284},
-				map: map,
-				icon: image
-			});				
-		}
-		</script>
+						<!-- =map -->
+						<div id="map"></div>
+						<script>
+						var map;
+						function initMap() {
+						var myLatlng = new google.maps.LatLng(46.653208, 32.560162);
+						var mapOptions = {
+							zoom: 13,
+							center: myLatlng,
+							mapTypeId: google.maps.MapTypeId.ROADMAP,
+							scrollwheel : false
+						};
+						var styles = [{
+							stylers: [
+								{saturation: 0}
+								]
+							}];
+							var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+							map.setOptions({styles: styles});
+
+							var image = '/images/balloon.png';
+							var mpf = new google.maps.Marker({
+								position: {lat: 46.652751, lng: 32.558284},
+								map: map,
+								icon: image
+							});				
+						}
+						</script>
+						<!-- =/map -->
 
 					</div>
 					<!-- =/content -->
@@ -332,8 +335,277 @@
 					</aside>
 					<!-- =/aside -->
 				</div>
+				<!-- =/content-aside -->
 			</div>
 		</div>
+
+		<!-- =other projects -->
+		<section class="other_projects">
+			<div class="container">
+				<h3 class="subtitle">Other projects:</h2>
+				<div class="farms_list owl-carousel" id="foo3">
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/svetla.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-sun"></i>
+							<p>Construction is schedule for 2Q of 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.90 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">14%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/water.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-water"></i>
+							<p>In operation since January 2016</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.93 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">14%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/field.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-green"></i>
+							<p>Will be built till September 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.66 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">15%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/wind.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-wind"></i>
+							<p>The construction is scheduled for Q4 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.70 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">15%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/svetla.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-sun"></i>
+							<p>Construction is schedule for 2Q of 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.90 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">14%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/water.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-water"></i>
+							<p>In operation since January 2016</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.93 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">14%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/field.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-green"></i>
+							<p>Will be built till September 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.66 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">15%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/svetla.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-sun"></i>
+							<p>Construction is schedule for 2Q of 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.90 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">14%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/water.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-water"></i>
+							<p>In operation since January 2016</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.93 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">14%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/field.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-green"></i>
+							<p>Will be built till September 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.66 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">15%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/wind.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-wind"></i>
+							<p>The construction is scheduled for Q4 2017</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.70 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">15%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="pic">
+								<img src="tmp/water.jpg" alt="" />
+							</div>
+						</div>
+						<div class="details text-center">
+							<i class="icon icon-water"></i>
+							<p>In operation since January 2016</p>
+							<div class="row">
+								<div class="cell">
+									<p class="num">0.93 €</p>
+									<p>Price per <br>Power Unit</p>
+								</div>
+								<div class="cell">
+									<p class="num">14%</p>
+									<p>Estimated annual <br> rate of return</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="owl_pagination">
+					<div class="owl_pagination_container">
+						<div class="owl-nav"></div>
+						<div class="owl-dots"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- =/other projects -->
 	</div>
 	<!-- InstanceEndEditable -->
 </div>
