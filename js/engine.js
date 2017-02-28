@@ -32,13 +32,6 @@ $(document).ready(function(){
 
 
 
-
-	// $('#money').keyup(function(e){
-	// 	var value = $(this).val();
-	// 	value = value.replace(' $', '');
-	// 	$('#money').val(value + ' $')
-	// })
-
 	$('#money, #amount, #invamount').inputmask(
 		"decimal", {
 			digits: 3,
@@ -114,7 +107,7 @@ $(document).ready(function(){
 	});
 
 
-	// validation
+	// validation modal contact form
 	$('#contactus-form .btn-submit').click(function(){
 		$('#contactus-form').submit();
 		return false;
@@ -138,7 +131,7 @@ $(document).ready(function(){
 		}
 	});
 
-	// validation mpf agent
+	// validation mpf agent 
 	$('#mpfagent-form .btn-submit').click(function(){
 		$('#mpfagent-form').submit();
 		return false;
@@ -160,7 +153,51 @@ $(document).ready(function(){
 				alert(errorTxt)
 			});
 		}
-	});	
+	});
+
+
+	// validation project page
+	$('#order-form .btn-submit').click(function(){
+		amount = $('#invamount').val();
+
+		if (amount.search(/\d/) != -1){
+			console.log('|' + $('#invamount').val() + '|');			
+		}
+		$('#order-form').submit();
+		return false;
+	});
+
+	errorTxt = 'Ошибка отправки';
+	$('#order-form').validate({
+		submitHandler: function(form){
+			strSubmit=$(form).serialize();
+			$.ajax({type: 'POST',url: '/ajax/callback.ajax.php',data: strSubmit,
+				success: function(){
+					console.log('"' + $('#invamount').val()) + '"';
+					name = $('#nameagent').val();
+					thankTxt = '<div class="thank fixed"> <div class="inner"> <button class="close" type="button"></button> <p class="name">Dear ' + name +'</p> <p>Thank you for choosing up MyPowerFarm. <br/> Our manager will contact you as soon as possible!</p> <p><strong>Sincerely, <br>My Power Farm</strong></p> </div> </div>';
+					$('body').append(thankTxt);
+					$('body').addClass('blur').append('<div class="modal-backdrop in"></div>');
+					startClock('order-form');
+				}
+			}).fail(function(error){
+				alert(errorTxt)
+			});
+		}
+	});
+
+
+	$.validator.addMethod("validamount", function(value){
+		amount = $('#invamount').val();
+		if (amount.search(/\d/) != -1){
+			return true
+		} else return false;
+
+	},"");
+
+	$.validator.addClassRules("requiredamount", { validamount: true});
+
+
 })
 
 $(document).on('click','.thank .close', function(e){	
@@ -215,24 +252,36 @@ function showTime(form){
 	sec = sec-1;
 	if (sec <=0) {
 		stopClock();
-		if (form == 'contactus-form'){ 
-			$('.thank').fadeOut('normal', function(){
-				$('#contactus-form .form-control').val('');
-				$('.thank').remove();
-				$('#contactus').modal('hide');
-			})
-		}
 
-		if (form == 'mpfagent-form'){ 
-			$('.thank').fadeOut('normal', function(){
-				$('#mpfagent-form .form-control').val('');
-				$('.thank').remove();
-				$('body').removeClass('blur');
-				$('.modal-backdrop').remove()
-			})
-		}
-
-
+		switch (form){
+			case 'contactus-form' :
+				$('.thank').fadeOut('normal', function(){
+					$('#contactus-form .form-control').val('');
+					$('.thank').remove();
+					$('#contactus').modal('hide');
+				});
+				break;
+			case 'mpfagent-form' :
+				$('.thank').fadeOut('normal', function(){
+					$('#mpfagent-form .form-control').val('');
+					$('.thank').remove();
+					$('body').removeClass('blur');
+					$('.modal-backdrop').remove()
+				});
+				break;
+			case 'order-form' : 
+				$('.thank').fadeOut('normal', function(){
+					$('#order-form .form-control').val('');
+					$('.thank').remove();
+					$('body').removeClass('blur');
+					$('.modal-backdrop').remove()
+				})
+				break;
+			default :
+				$money = '';
+				$output = '';
+			 	break;
+		};
 	}
 }
 
