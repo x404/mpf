@@ -1,3 +1,45 @@
-textarea{overflow:hidden}       
-@media \0screen{
+:root .header .logo,
+:root .header nav,
+:root .header .contacts,
+:root .header .link,
+:root .header .switch
+{
+
+	float: left\9;	
+
+}
+
+:root .farms_list .item .row{
+	overflow: hidden;
+}
+
+:root .farms_list .item .row .cell{
+	float: left\9;
+	width: 50%\9;
+}
+
+
+:root .friends .row{
+	overflow: hidden\9;
+}
+:root .friends .row .left,
+:root .friends .row .right{
+	float: left\9
+}
+:root .friends .row .right{
+	width: 825px\9;
+}
+
+:root footer .logo,
+:root footer .buttons{
+	float: left\9;
+}
+
+:root footer .buttons{
+	margin-top: 2rem\9;
+}
+
+:root footer .social{
+	float: right\9;
+	margin-top: 1rem\9;
 }

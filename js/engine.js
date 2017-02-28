@@ -259,7 +259,7 @@ addLoadEvent(function(){
 
 
 var timer;
-var sec = 4;
+var sec = 400;
 
 function showTime(form){
 	sec = sec-1;
@@ -301,7 +301,7 @@ function showTime(form){
 function stopClock(){
 	window.clearInterval(timer);
 	timer = null;
-	sec = 4;
+	sec = 400;
 }
 
 function startClock(form){
