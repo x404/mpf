@@ -43,3 +43,27 @@
 	float: right\9;
 	margin-top: 1rem\9;
 }
+
+
+:root .mpfagent .form .row, 
+:root .developer .form .row, 
+:root .project .form .row{
+	display: block\9;
+	clear: both\9;
+}
+
+:root .mpfagent .form .row:after{
+	display: block\9;
+	content: ""\9;
+	clear: both\9;
+	height: 1px\9;
+}
+
+
+:root .mpfagent .form .row .cell, 
+:root .developer .form .row .cell, 
+:root .project .form .row .cell{
+	width: 48%\9;
+	margin-right: 1%\9;
+	float: left\9;	
+}
