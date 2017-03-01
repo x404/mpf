@@ -42,7 +42,22 @@ $(document).ready(function(){
 		items:4,
 		navText: ["PREV", "NEXT"],
 		navContainer : '.other_projects .owl-nav',
-		dotsContainer : '.other_projects .owl-dots'
+		dotsContainer : '.other_projects .owl-dots',
+		responsive:{
+			0:{
+				items:1,
+				stagePadding: 20
+			},
+			670:{
+				items:2
+			},
+			991:{
+				items:3
+			},
+			1300:{
+				items:4
+			}
+		}
 	});	
 
 
