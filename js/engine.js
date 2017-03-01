@@ -110,8 +110,6 @@ $(document).ready(function(){
 
 
 
-
-
 	var $output = '',
 		$sumtext = '';
 
@@ -132,11 +130,13 @@ $(document).ready(function(){
 			 	break;
 		};
 
-		$('.money-box').addClass('enabled').find('.placeholder').show();
-		$('.calculator .result-text').html($output);
-		$('.calculator #money').val('').removeAttr('disabled').attr('placeholder', $money);
-		$('.calculator .money-box .placeholder').text($money);
 
+		$('.money-box').addClass('enabled').find('.placeholder').show().text($money);
+
+		$('.calculator .result-text').html($output);
+		$('.calculator #money').prop('disabled' ,false).val('').prop('placeholder', $money);
+		// $('.calculator #money');
+		// $('.calculator #money').inputmask('setvalue', '');
 	});
 
 
@@ -235,7 +235,21 @@ $(document).ready(function(){
 	},"");
 
 	$.validator.addClassRules("requiredamount", { validamount: true});
-})
+
+
+	// detect user agent
+		var ua = navigator.userAgent;
+		var checker = {
+			iphone: ua.match(/(iPhone|iPod|iPad)/),
+			blackberry: ua.match(/BlackBerry/),
+			android: ua.match(/Android/)
+		};
+		if (checker.iphone){
+			$('body').addClass('iphone');
+			$('.money-box .placeholder').remove();
+		}
+
+});
 
 $(document).on('click','.thank .close', function(e){	
 	e.preventDefault();
