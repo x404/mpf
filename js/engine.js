@@ -83,6 +83,15 @@ $(document).ready(function(){
 	$('#capacity').styler();
 
 
+	$(window).scroll(function (){
+		if ($(this).scrollTop() > 270){
+			$(".contact-btn").fadeIn();
+		} else{
+			$(".contact-btn").fadeOut();
+		}
+	});
+
+
 	// calculator
 	$.fn.setCursorPosition = function(pos) {
 		this.each(function(index, elem) {
