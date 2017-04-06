@@ -31,7 +31,7 @@
 	width: 100%;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	padding-top: 15px;
+	padding-top: 12px;
 }
 .jq-selectbox .placeholder {
 	color: #888;
@@ -46,7 +46,7 @@
 }
 .jq-selectbox__trigger-arrow {
 	position: absolute;
-	top: 24px;
+	top: 20px;
 	right: 27px;
 	background: url(../images/trigger-arrow.png) no-repeat left top;
 	width: 15px;

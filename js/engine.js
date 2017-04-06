@@ -13,13 +13,13 @@ $(document).ready(function(){
 				items:1,
 				stagePadding: 20
 			},
-			670:{
+			480:{
 				items:2
 			},
-			991:{
+			768:{
 				items:3
 			},
-			1300:{
+			1000:{
 				items:4
 			}
 		}
@@ -48,13 +48,13 @@ $(document).ready(function(){
 				items:1,
 				stagePadding: 20
 			},
-			670:{
+			400:{
 				items:2
 			},
-			991:{
+			700:{
 				items:3
 			},
-			1300:{
+			1200:{
 				items:4
 			}
 		}
@@ -70,7 +70,7 @@ $(document).ready(function(){
 			allowPlus: false,
 			allowMinus: false,
 			placeholder: ' ',
-			suffix: " $",
+			prefix: "$ ",
 			rightAlign : false,
 			showMaskOnFocus : true
 		});
@@ -83,12 +83,15 @@ $(document).ready(function(){
 	$('#capacity').styler();
 
 
+	if (document.documentElement.scrollHeight == document.documentElement.offsetHeight) $('.contact-btn').fadeIn();
+
 	$(window).scroll(function (){
 		if ($(this).scrollTop() > 270){
-			$(".contact-btn").fadeIn();
+			$('.contact-btn').fadeIn();
 		} else{
-			$(".contact-btn").fadeOut();
+			$('.contact-btn').fadeOut();
 		}
+		if (document.documentElement.scrollHeight == document.documentElement.offsetHeight) $('.contact-btn').fadeIn();
 	});
 
 
@@ -142,7 +145,7 @@ $(document).ready(function(){
 
 	$('.calc-btn').click(function(e){
 		e.preventDefault();
-		$('.calculator .sum').text('20 000 $');
+		$('.calculator .sum').text('$ 20 000');
 	});
 
 
@@ -263,7 +266,7 @@ $(document).on('click','.thank .close', function(e){
 
 $(document).on('click','.money-box.enabled .placeholder', function(e){	
 	$(this).hide();
-	$('#money').focus().setCursorPosition(0);
+	$('#money').focus().setCursorPosition(2);
 });
 
 
