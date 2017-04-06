@@ -10,6 +10,9 @@ SCSS файлы/каталоге нужны только в верстке, пр
 styles.css - результат компиляции scss файлов, поэтому, если надо что-то править, то это необходимо делать в scss файлах с последущей компиляцией в css - можно использовать программу Prepros [https://prepros.io/downloads](https://prepros.io/downloads)  или создавать вслед за styles.css отдельный css файл, в котором переопределять стили. 
 
 
+Видео для главной страницы скачать тут - [https://drive.google.com/file/d/0BxOOAuFcQMMsM1h0REh2OFJOZU0/view?usp=sharing](https://drive.google.com/file/d/0BxOOAuFcQMMsM1h0REh2OFJOZU0/view?usp=sharing)
+Каталог video расположить в корне сайта.
+
 
 ---------------------------------------------------------
 
