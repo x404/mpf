@@ -1,0 +1,435 @@
+.video{
+	@include font-size(7.2);
+	background: $color1;
+	color: $color2;
+	height: 650px;
+	padding: 45px 0;
+	overflow: hidden;
+	position: relative;
+	video{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	p{
+		font-weight: 900;
+		position: relative;
+		z-index: 10;
+	}
+
+	.btn{
+		margin-top: 33rem;
+		padding-left: 6.7rem;
+		padding-right: 6.7rem;
+	}
+
+	#bgvideo,
+	#bgvideo2,
+	{
+		height: 100%;
+		width: auto;
+		top: 2%;
+		left: 0;
+		z-index: 2;
+	}
+	#bgvideo2{
+		display: none;
+		z-index: 1;
+	}
+}
+
+
+/* =farms_list
+---------------------------*/
+.powerfarms{
+	padding: 8.1rem 0 10.2rem;
+}
+
+.farms_list{
+	margin-left: -5px;
+	margin-right: -5px;
+	overflow: hidden;
+	padding-top: 10rem;
+	.item{
+		// float: left;
+		color: $color2;
+		margin:0 5px;
+		width: 220px;
+		@include drop-shadow(0,2px, 6px, .2);
+		.top{
+			position: relative;
+		}
+		img{
+			vertical-align: top;
+		}
+
+		.plate{
+			background-color: rgba(0, 0, 0, .5);
+			@include flexbox;
+			@include align-items(center);
+			bottom: 0;
+			height: 51px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			.date{
+				@include font-size(1.2);
+				flex-grow: 1;
+				text-align: right;
+				padding-right: .6rem;
+			}
+			.icon{
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 40px;
+				&-sun{
+					background:url(../images/sun.png) no-repeat center center rgba(253, 103, 68, .9);
+				}
+				&-water{
+					background:url(../images/water.png) no-repeat center center rgba(6, 148, 210, .9);
+				}
+				&-green{
+					background:url(../images/green.png) no-repeat center center rgba(15, 192, 154, .9);
+				}
+				&-wind{
+					background:url(../images/wind.png) no-repeat center center rgba(62, 193, 240, .9);
+				}
+			}
+		}
+		
+		.name{
+			@extend .droidserif;
+			@include font-size(1.2);
+			font-weight: bold;
+			padding-left: 46px;
+			p{
+				max-width: 6rem;
+			}
+		}
+		.details{
+			background-color: $color6; 
+			padding: 1.5rem 1.8rem .7rem;
+			position: relative;
+			z-index: 10;
+			.btn{
+				@include font-size(1.6);
+				margin-top: .4rem;
+				padding-left: 0;
+				padding-right: 0;
+				padding-top: 1.5rem;
+				width: 100%;
+			}
+			.investor{
+				@include font-size(1.2);
+				line-height: 1.5;
+				padding-top: 0.6rem;
+			}
+		}
+
+
+		.row{
+			@include flexbox;
+			margin: 1.2rem 0; 
+			&:first-child{
+				margin-top: 0;
+			}
+			.cell{
+				flex-basis: 50%;
+				@include font-size(1.2);
+				.num{
+					@include font-size(2);
+					font-weight: bold;
+					padding-bottom: .2rem;
+				}
+			}
+		}
+	}
+}
+
+.powerfarms,
+.friends,
+.other_projects
+{
+	.owl_pagination{
+		margin-top: 8rem;
+		text-align: center;
+		&_container{
+			display: inline-block;
+			position: relative;
+			padding: 0 69px;
+		}
+	}
+
+	.owl-nav {
+		left: 0;
+		margin-top: 10px;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		@extend .droidsans;
+	}
+	.owl-nav [class*='owl-'] {
+		@include font-size(1.3);
+		cursor: pointer;
+		display: inline-block;
+		padding: 4px 7px;
+		position: absolute;
+		&:before{
+			@extend .before;
+			@include sprite(0, -25px);
+			height: 15px;
+			top: 5px;
+			width: 20px;
+		}
+	}
+	.owl-nav [class*='owl-']:hover {
+		text-decoration: none;
+	}
+
+	.owl-nav{
+		.owl-prev{
+			left: 0;
+			&:before{
+				left: -22px;
+			}
+		}
+		.owl-next{
+			right: 0;
+			&:before{
+				right: -24px;
+				@include rotation(180deg);
+			}
+		}
+		.disabled {
+			opacity: 0.5;
+			cursor: default;
+		}
+	}
+
+	.owl-nav.disabled + .owl-dots {
+		margin-top: 10px;
+	}
+
+	.owl-dots{
+		@extend .droidsans;
+		font-weight: bold;
+		text-align: center;
+		.owl-dot {
+			@include font-size(1.3);
+			@include rounded(50%);
+			@include transition-param(border-color);
+			border: 2px solid rgba(255, 255, 255, 0);
+			cursor: pointer;
+			display: inline-block;
+			font-weight: bold;
+			height: 40px;
+			margin-left: 6px;
+			margin-right: 6px;
+			width: 40px;
+			zoom: 1;
+			&:hover,
+			&.active{
+				border-color: $color9;
+			}
+			span {
+				text-indent: -9999em
+			}
+		}
+	}
+	.owl-dots .owl-dot.active{
+		cursor: default;
+	}
+
+	.owl-dots .owl-dot.active span,
+	.owl-theme .owl-dots .owl-dot:hover span {
+		background: #869791;
+	}
+
+	.owl-dots {
+		counter-reset: dots;
+	}
+	.owl-dot{
+		position: relative;
+		&:before {
+			content: counter(dots);
+			counter-increment:dots;
+			left: 0;
+			position: absolute;
+			text-align: center;
+			top: 11px;
+			width: 100%;
+		}
+	}
+
+}
+/* =/farms_list
+---------------------------*/
+
+
+/* =calculator
+---------------------------*/
+.calculator-friends{
+	background: url(../images/bg-1.jpg) no-repeat center bottom / cover;
+	.calculator{
+		background-color: rgba(0, 0, 0, .45);
+		padding: 13rem 0 17rem;
+		.title{
+			color: $color2;
+		}
+
+		form{
+			margin-top: 7rem;
+			select{
+				display: block;
+				width: 100%;
+				margin-top: 2rem;
+			}
+
+			select{
+				height: 5.5rem;
+			}
+
+			.form-control{
+				@include rounded(.4rem);
+				border: 2px solid $color5;
+				height: 50px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.calc-btn{
+				@include drop-shadow(0,0,15px, .2);
+				margin-top: 1.5rem;
+				width: 100%;
+			}
+
+			.money-box{
+				position: relative;
+				@include rounded(.4rem);
+				.placeholder{
+					background-color: #d8dfe2;
+					@include font-size(1.6);
+					@include rounded(.4rem);
+					border: 2px solid $color5;
+					color: #ccc;
+					height: 100%;
+					left: 0;
+					padding-top: 12px;	
+					position: absolute;
+					top: 0;
+					width: 100%;
+					z-index: 10;
+				}
+				&.enabled{
+					.placeholder{
+						background-color: $color2;
+						cursor: text;					
+					}
+				}
+			}
+		}
+
+		.inner{
+			width: 38rem;
+		}
+
+		.btn{
+			width: 278px;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.result{
+			@include font-size(1.6);
+			color: $color2;
+			margin-bottom: 6.5rem;
+			margin-top: 3.5rem;
+			.sum{
+				@extend .center-block;
+				@include font-size(3.6);
+				border-bottom: 1px solid $color2;
+				font-weight: bold;
+				margin-bottom: .8rem;
+				padding-bottom: 1rem;
+				width: 27rem;
+			}
+			.result-text{
+				min-height: 3.8rem;
+				white-space: nowrap;
+			}
+		}
+
+
+		.jq-selectbox{
+			margin-bottom: 1.5rem;
+			width: 100%;
+		}
+
+		.jq-selectbox__select{
+			height: 50px;
+		}
+	}
+}
+
+.friends{
+	padding: 13rem 0 9.4rem;
+	.title{
+		@include font-size(3.6)
+	}
+
+	.row{
+		@include flexbox;
+		@include font-size(1.3);
+		padding: .5rem 0;
+		h3{
+			@include font-size(1.6);
+			font-weight: bold;
+			padding-bottom: .8rem;
+		}
+		.left{
+			margin-right: 33px;
+			min-width: 220px;
+			width: 220px;
+		}
+		.right{
+			flex-grow: 1;
+			padding-top: 5px;
+			p{
+				line-height: 1.5;
+			}
+		}
+
+		&:last-child{
+			border-bottom: 0;
+		}
+	}
+
+	.btn{
+		@extend .center-block;
+		width: 280px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&-list{
+		margin-top: 6.3rem;
+	}
+
+	.owl_pagination{
+		margin-top: 3rem;
+		padding-bottom: 5rem;
+	}
+}
+/* =/calculator
+---------------------------*/
+
+
+
+
+.iphone{
+	.calculator-friends .calculator form .money-box .placeholder{
+		display: none;
+	}
+}
+	

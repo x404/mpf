@@ -1,0 +1,16 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	//ie11
+	.outerwrapper{
+		display: block;
+		flex: 0 0 auto;
+	}
+
+	textarea{
+		overflow: hidden;
+	}
+
+	.project .visual-form .row .form{
+		width: auto;
+		flex-basis: auto;
+	}
+}
